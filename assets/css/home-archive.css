@@ -1,0 +1,100 @@
+/* ================================================================
+   DOLAX home-archive.css — フォトアーカイブ・ライトボックス
+   ▶ index.html の PHOTO ARCHIVE グリッドとライトボックスを担当します
+   EDIT: グリッド列数 → .arc-grid の grid-template-columns
+   EDIT: ホバーエフェクト → .arc-grid-item:hover
+================================================================ */
+
+/* ============ PHOTO ARCHIVE ============ */
+.archive-sec { background: var(--navy-deep); color: #fff; overflow: hidden; }
+.archive-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; }
+.archive-head .kicker   { color: var(--gold-soft); }
+.archive-head .sec-title { color: #fff; margin-top: 4px; }
+
+/* -- Editorial Grid -- */
+.arc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: start; /* 各アイテムを画像の自然な高さでレンダリング */
+}
+.arc-grid-item {
+  position: relative; overflow: hidden;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  transition: outline-color .3s;
+}
+.arc-grid-item:hover { outline-color: var(--gold); }
+.arc-grid-item.wide { grid-column: span 2; }
+
+.arc-grid-item > img {
+  width: 100%;
+  height: auto;        /* 画像本来の縦横比をそのまま表示 */
+  display: block;
+  transition: transform .55s cubic-bezier(.25,.46,.45,.94);
+  will-change: transform;
+}
+.arc-grid-item:hover > img { transform: scale(1.06); }
+
+/* ホバーオーバーレイ */
+.arc-grid-item .arc-overlay {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: linear-gradient(to top, rgba(13,24,48,.92) 0%, rgba(13,24,48,.15) 50%, transparent 75%);
+  opacity: 0; transition: opacity .3s;
+}
+.arc-grid-item:hover .arc-overlay { opacity: 1; }
+.arc-grid-item .arc-year    { display: none; }
+.arc-grid-item .arc-caption { display: none; }
+
+/* 拡大アイコン */
+.arc-grid-item .arc-expand { position: absolute; top: 12px; right: 12px; z-index: 3; width: 32px; height: 32px; background: rgba(194,144,47,.9); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .25s; }
+.arc-grid-item:hover .arc-expand { opacity: 1; }
+.arc-grid-item .arc-expand svg { width: 14px; height: 14px; color: #fff; }
+
+/* ============ LIGHTBOX ============ */
+.lb-overlay { position: fixed; inset: 0; background: rgba(10,16,32,.95); z-index: 200; display: none; align-items: center; justify-content: center; padding: 20px; }
+.lb-overlay.open { display: flex; }
+.lb-inner { position: relative; max-width: 900px; width: 100%; }
+.lb-img { width: 100%; max-height: 80vh; object-fit: contain; display: block; }
+.lb-img-placeholder { width: 100%; height: 60vh; background: rgba(255,255,255,.05); border: 2px dashed rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.3); font-family: var(--font-en); letter-spacing: .1em; font-size: 15px; }
+.lb-caption { margin-top: 14px; font-size: 14px; color: #c9d2e2; display: flex; align-items: center; gap: 12px; }
+.lb-caption .lb-year { font-family: var(--font-en); font-weight: 700; font-size: 13px; color: var(--gold); letter-spacing: .1em; }
+.lb-close { position: absolute; top: -44px; right: 0; background: none; border: none; color: #fff; cursor: pointer; font-family: var(--font-en); font-size: 14px; letter-spacing: .1em; display: flex; align-items: center; gap: 8px; opacity: .7; transition: opacity .2s; }
+.lb-close:hover { opacity: 1; }
+.lb-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,.1); border: none; color: #fff; width: 44px; height: 44px; cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; transition: background .2s; }
+.lb-nav:hover { background: var(--gold); color: #1d1b10; }
+.lb-nav.prev { left: -56px; }
+.lb-nav.next { right: -56px; }
+
+.archive-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.1); }
+.arc-count { font-family: var(--font-en); font-size: 13px; color: rgba(255,255,255,.4); letter-spacing: .08em; }
+.arc-count span { color: var(--gold); font-weight: 700; }
+
+/* COMING SOON fallback（全画像読み込み失敗時） */
+#arcComingSoon {
+  text-align: center;
+  padding: 72px 0;
+  color: rgba(255,255,255,.3);
+  font-family: var(--font-en);
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1000px) {
+  .arc-grid               { grid-template-columns: repeat(2, 1fr); }
+  .arc-grid-item.wide     { grid-column: span 2; }
+  .lb-nav.prev            { left: -40px; }
+  .lb-nav.next            { right: -40px; }
+}
+@media (max-width: 768px) {
+  .archive-head               { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .arc-grid                   { grid-template-columns: 1fr; }
+  .arc-grid-item.wide         { grid-column: span 1; }
+  .lb-nav                     { display: none; }
+}
+@media (max-width: 480px) {
+  .arc-grid { grid-template-columns: 1fr; }
+}

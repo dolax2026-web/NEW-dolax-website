@@ -1,0 +1,59 @@
+/* ================================================================
+   DOLAX home-sponsors.css — PARTNER WITH DOLAX セクション
+   ▶ index.html 下部のパートナー紹介・CTA を担当します
+   EDIT: スポンサーページへのリンク → .partner-btn の href (index.html)
+================================================================ */
+
+/* ============ PARTNER ============ */
+.partner-sec { background: #fff; border-top: 1px solid var(--line); }
+
+.partner-intro { max-width: 620px; margin: 0 auto 80px; text-align: center; }
+.partner-intro .kicker    { display: inline-block; margin-bottom: 8px; }
+.partner-intro .sec-title { color: var(--navy); margin-bottom: 14px; }
+.partner-jp   { font-family: var(--font-body); font-size: 13px; color: rgba(20,35,63,.45); letter-spacing: .1em; margin-bottom: 28px; }
+.partner-lead { font-size: 14px; color: var(--muted); line-height: 2.1; letter-spacing: .04em; }
+
+/* スポンサー向け数字訴求 */
+.partner-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; margin-bottom: 56px;
+  border: 1px solid var(--line); background: var(--line);
+}
+.partner-stat {
+  background: #fff; padding: 32px 20px 28px; text-align: center;
+}
+.ps-num {
+  font-family: var(--font-number); font-weight: 900;
+  font-size: 48px; line-height: 1; color: var(--navy); letter-spacing: .03em;
+}
+.ps-num small { font-size: 22px; font-weight: 600; color: var(--muted); }
+.ps-lab {
+  font-family: var(--font-body); font-size: 13px; font-weight: 500;
+  color: var(--navy); letter-spacing: .04em; margin-top: 10px;
+}
+.ps-en {
+  font-family: var(--font-en); font-size: 10px; color: var(--muted);
+  letter-spacing: .14em; text-transform: uppercase; margin-top: 4px;
+}
+
+.partner-cta  { text-align: center; padding-top: 56px; border-top: 1px solid var(--line); }
+.partner-cta-lead { font-size: 14px; color: var(--muted); margin-bottom: 24px; letter-spacing: .04em; line-height: 1.9; }
+.partner-btn  { padding: 18px 56px; letter-spacing: .22em; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  .partner-stats { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .partner-intro { margin-bottom: 48px; }
+  .partner-stats { margin-bottom: 40px; }
+}
+@media (max-width: 480px) {
+  .partner-intro { margin-bottom: 32px; }
+  .partner-stats { grid-template-columns: 1fr 1fr; margin-bottom: 32px; }
+  .ps-num        { font-size: 36px; }
+  .ps-num small  { font-size: 17px; }
+  .ps-lab        { font-size: 12px; }
+  .partner-cta   { padding-top: 36px; }
+  .partner-btn   { padding: 16px 32px; width: 100%; box-sizing: border-box; display: block; }
+}

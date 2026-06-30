@@ -1,0 +1,119 @@
+  /* ---- IMG SLOT ---- */
+  .img-slot{background:rgba(20,35,63,.05);border:2px dashed rgba(20,35,63,.15);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+  .img-slot .slot-label{font-family:var(--font-en);font-size:11px;letter-spacing:.1em;color:rgba(20,35,63,.25);pointer-events:none;user-select:none;padding:6px;text-align:center;}
+  .img-slot img.filled{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+
+  /* ---- FILTER BAR ---- */
+  .filter-bar{position:sticky;top:88px;z-index:40;}
+  .filter-inner{display:flex;max-width:var(--maxw);margin:0 auto;padding:0 32px;overflow-x:auto;scrollbar-width:none;}
+  .filter-inner::-webkit-scrollbar{display:none;}
+
+  /* Section tabs: PLAYERS / STAFF / COACHES */
+  .section-tabs{background:var(--navy-deep);border-bottom:1px solid rgba(255,255,255,.08);}
+  .stab{font-family:"Montserrat",sans-serif;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:16px 28px;border:none;background:transparent;cursor:pointer;color:rgba(255,255,255,.4);border-bottom:3px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s;white-space:nowrap;display:inline-flex;flex-direction:column;align-items:center;gap:3px;}
+  .stab-en{display:block;}
+  .stab-ja{display:block;font-family:var(--font-body);font-size:10px;letter-spacing:.04em;font-weight:400;text-transform:none;color:rgba(255,255,255,.3);}
+  .stab.active,.stab:hover{color:#fff;border-bottom-color:var(--gold);}
+  .stab.active .stab-ja,.stab:hover .stab-ja{color:rgba(255,255,255,.6);}
+
+  /* Year sub-tabs: ALL / 4回生 / 3回生 / 2回生 / 1回生 */
+  .year-sub-bar{background:var(--paper);border-bottom:1px solid var(--line);}
+  .ytab{font-family:"Montserrat",sans-serif;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:12px 20px;border:none;background:transparent;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
+  .ytab.active,.ytab:hover{color:var(--navy);border-bottom-color:var(--gold);}
+
+  /* ---- ROSTER GRID ---- */
+  .roster-section{padding:64px 0 96px;}
+  .roster-count{font-family:var(--font-en);font-size:13px;color:var(--muted);letter-spacing:.08em;margin-bottom:32px;}
+  .roster-count span{color:var(--navy);font-weight:700;}
+  .roster-full-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+
+  /* ---- PLAYER CARD ---- */
+  .player-card{display:block;position:relative;overflow:hidden;background:var(--cream);border:1px solid var(--line);transition:transform .2s,box-shadow .2s;cursor:default;color:inherit;text-decoration:none;}
+  .player-card.has-detail{cursor:pointer;}
+  .player-card.has-detail:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(20,35,63,.12);}
+  .player-card .player-photo{width:100%;aspect-ratio:3/4;position:relative;overflow:hidden;}
+  .player-card .player-photo .img-slot{position:absolute;inset:0;width:100%;height:100%;border:none;background:linear-gradient(180deg,#1b2f52 0%,#0d1830 100%);}
+  .player-card .player-photo .img-slot .slot-label{display:none;}
+  /* 写真の上にonerrorでフォールバック */
+  .player-card .player-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;}
+  /* 役職バッジ */
+  .player-role{position:absolute;top:0;left:0;right:0;font-family:"Montserrat",sans-serif;font-weight:700;font-size:9px;letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:6px 6px;z-index:3;}
+  .player-role.captain{background:var(--gold);color:#1d1b10;}
+  .player-role.leader{background:var(--navy);color:var(--gold);}
+  .player-role.subleader{background:var(--navy-mid);color:#fff;}
+  /* 番号 */
+  .player-num{position:absolute;top:32px;left:12px;font-family:var(--font-number);font-weight:700;font-size:26px;color:#fff;line-height:1;text-shadow:0 2px 8px rgba(0,0,0,.6);z-index:2;letter-spacing:.02em;}
+  .player-num.no-role{top:12px;}
+  .player-num span{color:var(--gold);font-size:13px;font-weight:600;}
+  /* 情報エリア */
+  .player-info{padding:14px 16px 18px;}
+  .player-pos{font-family:"Montserrat",sans-serif;font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+  .player-name{font-family:var(--font-body);font-weight:700;font-size:14px;color:var(--navy);line-height:1.3;}
+  .player-meta{font-size:12px;color:var(--muted);margin-top:3px;}
+  .player-comment{font-size:11.5px;color:var(--muted);font-style:italic;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  /* ボトムゴールドバー（has-detailのみ） */
+  .player-card::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s;}
+  .player-card.has-detail:hover::after{transform:scaleX(1);}
+  /* 詳細リンクあり */
+  .player-detail-arrow{display:flex;align-items:center;justify-content:flex-end;margin-top:6px;}
+  .player-detail-arrow svg{width:13px;height:13px;color:var(--gold);opacity:.6;transition:opacity .2s,transform .2s;}
+  .player-card.has-detail:hover .player-detail-arrow svg{opacity:1;transform:translateX(3px);}
+
+
+  /* ---- YEAR GROUP HEADER ---- */
+  .year-group-header{grid-column:1/-1;display:flex;align-items:center;gap:16px;padding:8px 0 4px;margin-top:16px;border-bottom:2px solid var(--gold);}
+  .year-group-header:first-child{margin-top:0;}
+  .yh-label{font-family:var(--font-en);font-weight:700;font-size:18px;letter-spacing:.1em;color:var(--navy);}
+  .yh-count{font-family:var(--font-en);font-size:13px;color:var(--muted);letter-spacing:.06em;}
+  /* ---- STAFF CARD ---- */
+  .staff-role-badge{position:absolute;bottom:0;left:0;right:0;background:var(--navy);color:var(--gold);font-family:var(--font-en);font-weight:700;font-size:11px;letter-spacing:.14em;text-align:center;padding:4px 0;z-index:3;}
+  .player-photo{width:100%;aspect-ratio:3/4;position:relative;overflow:hidden;}
+
+  /* ---- LOAD ERROR ---- */
+  .roster-load-error {
+    grid-column: 1 / -1;
+    padding: 48px 0;
+    text-align: center;
+    color: var(--muted);
+  }
+  .roster-load-error-title {
+    font-family: var(--font-en);
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: .2em;
+    color: rgba(20,35,63,.2);
+  }
+  .roster-load-error-sub {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media(max-width:1100px){.roster-full-grid{grid-template-columns:repeat(3,1fr);gap:20px;}}
+  @media(max-width:768px){
+    .filter-bar{top:72px;}
+    .filter-inner{padding:0 16px;}
+    .stab{padding:14px 20px;font-size:11px;}
+    .ytab{padding:10px 14px;font-size:10px;}
+    .roster-section{padding:40px 0 64px;}
+    .roster-full-grid{grid-template-columns:repeat(2,1fr);gap:16px;}
+    .player-info{padding:12px 14px 16px;}
+    .player-name{font-size:14px;}
+    .player-num{font-size:24px;}
+  }
+  @media(max-width:480px){
+    .roster-section{padding:32px 0 48px;}
+    .roster-full-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+    .player-info{padding:10px 12px 14px;}
+    .player-name{font-size:13px;}
+    .player-pos{font-size:9px;}
+    .player-num{font-size:22px;}
+    .stab{padding:12px 16px;font-size:11px;}
+    .ytab{padding:10px 12px;font-size:10px;}
+  }
+  @media(max-width:375px){
+    .stab{padding:11px 12px;font-size:10px;letter-spacing:.12em;}
+    .ytab{padding:9px 10px;font-size:9px;letter-spacing:.10em;}
+    .roster-full-grid{gap:8px;}
+    .player-info{padding:8px 10px 12px;}
+  }

@@ -1,0 +1,329 @@
+  /* ===== SP CTA BANNER ===== */
+  .sp-cta-banner {
+    background: #f4f6fa;
+    padding: 80px 0;
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--line);
+  }
+  .sp-cta-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .sp-cta-kicker {
+    font-family: var(--font-accent);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .sp-cta-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: clamp(34px, 3.8vw, 52px);
+    color: var(--navy);
+    line-height: 1.2;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .sp-cta-sub {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 2;
+    margin-bottom: 40px;
+  }
+  .sp-cta-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .sp-cta-btn-main {
+    display: inline-block;
+    font-family: var(--font-accent);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    padding: 16px 36px;
+    background: var(--navy);
+    color: #fff;
+    border: 1px solid var(--navy);
+    transition: background .2s, border-color .2s, color .2s;
+    white-space: nowrap;
+  }
+  .sp-cta-btn-main:hover { background: var(--gold); border-color: var(--gold); color: #1d1b10; }
+  .sp-cta-btn-sub {
+    display: inline-block;
+    font-family: var(--font-accent);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 32px;
+    background: transparent;
+    color: var(--navy);
+    border: 1px solid rgba(20,35,63,.35);
+    transition: background .2s, border-color .2s, color .2s;
+    white-space: nowrap;
+  }
+  .sp-cta-btn-sub:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .sp-cta-benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .sp-cb {
+    padding: 22px 18px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 2px solid var(--gold);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sp-cb-icon { width: 28px; height: 28px; color: var(--gold); }
+  .sp-cb-icon svg { width: 100%; height: 100%; }
+  .sp-cb-text {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--ink);
+    line-height: 1.7;
+    font-weight: 500;
+  }
+
+  /* ===== TEAM METRICS ===== */
+  .stats-team-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 0;
+  }
+  .stat-team-card {
+    background: #fff;
+    padding: 40px 20px 32px;
+    text-align: center;
+    border-top: 3px solid var(--gold);
+  }
+  .stat-team-num {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 52px;
+    line-height: 1;
+    color: var(--navy);
+  }
+  .stat-team-card .stat-label  { color: var(--muted); margin-top: 12px; }
+  .stat-team-card .stat-platform { color: var(--gold); margin-top: 8px; }
+.block-sub-head {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+  .block-sub-head::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+  .block-sub-label {
+    font-family: var(--font-accent);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ===== COMMON ===== */
+  .block-head { display: flex; align-items: center; gap: 18px; margin-bottom: 36px; }
+  .block-head::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+  .block-label { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--navy); white-space: nowrap; }
+
+  /* ===== INTRO ===== */
+  .intro-sec { background: #fff; padding: 80px 0 72px; border-bottom: 1px solid var(--line); }
+  .intro-inner { max-width: 680px; }
+  .intro-inner .kicker { display: inline-block; }
+  .intro-inner .sec-title { color: var(--navy); margin-top: 4px; }
+  .intro-jp { font-family: var(--font-body); font-size: 14px; color: rgba(20,35,63,.42); letter-spacing: .1em; margin-bottom: 32px; }
+  .intro-lead { font-size: 15px; color: var(--ink); line-height: 2.1; }
+  .intro-lead + .intro-lead { margin-top: 20px; }
+  .intro-gold-bar { width: 48px; height: 3px; background: var(--gold); margin: 36px 0; }
+
+  /* ===== STATS ===== */
+  .stats-sec { background: #fff; padding: 72px 0; }
+  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .stat-card { background: #fff; padding: 44px 20px 36px; text-align: center; transition: background .2s; }
+  .stat-card:hover { background: rgba(194,144,47,.03); }
+  .stat-num { font-family: var(--font-heading); font-weight: 900; font-size: 52px; line-height: 1; color: var(--navy); }
+  .stat-sfx { font-family: var(--font-body); font-weight: 700; font-size: 24px; }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 12px; letter-spacing: .03em; line-height: 1.6; }
+  .stat-platform { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-top: 8px; }
+  .stats-note { font-size: 11px; color: var(--muted); margin-top: 16px; text-align: right; letter-spacing: .03em; }
+
+  /* ===== INSTAGRAM STATS ===== */
+  .ig-stats-sec {
+    background: #f4f6fa;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .ig-stats-meta {
+    margin-bottom: 16px;
+  }
+  .ig-meta-tag {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: .03em;
+    padding: 4px 12px;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+  .ig-stats-desc {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.85;
+    max-width: 720px;
+    margin-bottom: 28px;
+  }
+  .ig-stats-footnote {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-top: 16px;
+  }
+  /* 数字が長めなので stat-team-num を少し絞る */
+  .ig-stats-sec .stat-team-num {
+    font-size: 38px;
+  }
+
+  /* ===== VALUES ===== */
+  .values-sec { background: #fff; }
+  .values-sec .sec-title { margin-bottom: 56px; }
+  .values-list { display: flex; flex-direction: column; }
+  .value-item { display: grid; grid-template-columns: 88px 1fr; gap: 36px; padding: 40px 0; border-bottom: 1px solid var(--line); align-items: start; }
+  .value-item:first-child { border-top: 1px solid var(--line); }
+  .value-num { font-family: var(--font-heading); font-weight: 700; font-size: 11px; letter-spacing: .26em; color: var(--gold); padding-top: 4px; }
+  .value-title { font-family: var(--font-body); font-weight: 700; font-size: 17px; color: var(--navy); margin-bottom: 12px; line-height: 1.5; letter-spacing: .04em; }
+  .value-text { font-size: 14px; color: var(--muted); line-height: 1.95; }
+
+  /* ===== MENU ===== */
+  .menu-sec { background: #f4f6fa; border-top: 1px solid var(--line); }
+  .menu-sec .kicker { display: inline-block; }
+  .menu-sec .sec-title { color: var(--navy); margin-top: 4px; }
+  .menu-lead { font-size: 14px; color: var(--muted); margin: 18px 0 52px; max-width: 58ch; line-height: 1.95; }
+  .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .menu-card { padding: 32px; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--gold); transition: box-shadow .25s; }
+  .menu-card:hover { box-shadow: 0 6px 24px rgba(20,35,63,.08); }
+  .menu-card.full { grid-column: 1 / -1; }
+  .menu-card-label { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .menu-card-title { font-family: var(--font-body); font-weight: 700; font-size: 16px; color: var(--navy); margin-bottom: 14px; letter-spacing: .04em; }
+  .menu-card-text { font-size: 13px; color: var(--muted); line-height: 1.9; }
+
+  /* ===== SUPPORT ===== */
+  .support-sec { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .support-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+  .support-inner .kicker { display: inline-block; margin-bottom: 8px; }
+  .support-inner .sec-title { color: var(--navy); margin-bottom: 8px; }
+  .support-subhead { font-family: var(--font-body); font-size: 13px; color: rgba(20,35,63,.42); letter-spacing: .08em; margin-bottom: 32px; }
+  .support-text { font-size: 14px; color: var(--muted); line-height: 2.1; margin-bottom: 44px; }
+  .wishlist-btn { padding: 17px 48px; }
+  .wishlist-note { font-size: 11px; color: var(--muted); margin-top: 16px; }
+
+  /* ===== CONTACT ===== */
+  .contact-sec {
+    background: #fff;
+    text-align: center;
+    border-top: 3px solid var(--gold);
+  }
+  .contact-sec .kicker { display: inline-block; margin-bottom: 8px; }
+  .contact-sec .sec-title {
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+  .contact-title-bar {
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 28px;
+  }
+  .contact-lead {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 40px;
+    line-height: 1.9;
+    max-width: 52ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact-btn { padding: 17px 52px; }
+  .contact-sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 18px;
+    letter-spacing: .03em;
+  }
+
+  @media (max-width: 900px) {
+    /* CTA banner */
+    .sp-cta-inner { grid-template-columns: 1fr; gap: 40px; }
+    .sp-cta-benefits { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .sp-cb { flex-direction: row; align-items: flex-start; gap: 12px; padding: 16px 14px; }
+    /* Stats */
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .menu-grid { grid-template-columns: 1fr; }
+    .menu-card.full { grid-column: auto; }
+    .value-item { grid-template-columns: 60px 1fr; gap: 24px; }
+  }
+  @media (max-width: 600px) {
+    /* CTA banner */
+    .sp-cta-banner { padding: 56px 0; }
+    .sp-cta-benefits { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .sp-cb { flex-direction: column; }
+    /* Stats */
+    .sec-pad, .stats-sec, .intro-sec { padding: 64px 0; }
+    .sec-title { font-size: 32px; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat-num { font-size: 38px; }
+    .stat-sfx { font-size: 18px; }
+    .stats-team-row { grid-template-columns: 1fr 1fr 1fr; }
+    .stat-team-num { font-size: 38px; }
+    .stat-team-card { padding: 28px 12px 22px; }
+    .value-item { grid-template-columns: 1fr; gap: 8px; padding: 32px 0; }
+    .value-num { padding-top: 0; }
+    /* Instagram stats */
+    .ig-stats-sec .stats-team-row { grid-template-columns: repeat(2, 1fr); }
+    .ig-stats-sec .stat-team-num { font-size: 26px; }
+  }
+  @media (max-width: 480px) {
+    /* CTA banner */
+    .sp-cta-banner { padding: 44px 0; }
+    .sp-cta-actions { flex-direction: column; }
+    .sp-cta-btn-main,
+    .sp-cta-btn-sub { display: block; width: 100%; }
+    .sp-cta-benefits { grid-template-columns: 1fr 1fr; }
+    /* Stats */
+    .intro-sec, .stats-sec { padding: 48px 0; }
+    .stat-card { padding: 28px 12px 22px; }
+    .stat-num { font-size: 30px; }
+    .stat-sfx { font-size: 15px; }
+    .stat-label { font-size: 11px; }
+    .stats-team-row { grid-template-columns: 1fr; }
+    .stat-team-num { font-size: 30px; }
+    .stat-team-card { padding: 24px 16px 20px; }
+    .wishlist-btn { padding: 16px 28px; font-size: 10px; letter-spacing: .14em; }
+    .contact-btn { padding: 16px 28px; font-size: 10px; letter-spacing: .14em; }
+    .menu-card { padding: 28px 20px; }
+    .intro-lead { font-size: 14px; }
+    /* Instagram stats */
+    .ig-stats-sec .stats-team-row { grid-template-columns: repeat(2, 1fr); }
+    .ig-stats-sec .stat-team-num { font-size: 22px; }
+  }

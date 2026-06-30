@@ -1,0 +1,120 @@
+  /* ============ MESSAGE SECTION ============ */
+  .msg-section { padding: 96px 0 112px; background: var(--paper); }
+
+  /* ---- 2カラムグリッド ---- */
+  .msg-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+  }
+
+  /* ---- メッセージカード ---- */
+  .msg-card {
+    background: var(--cream); position: relative;
+  }
+
+  /* 写真エリア */
+  .msg-photo-wrap {
+    position: relative; margin-bottom: 0;
+  }
+  .msg-photo-wrap .corner-tl {
+    position: absolute; top: -12px; left: -12px;
+    width: 40px; height: 40px; background: var(--gold); z-index: 0;
+  }
+  .msg-photo-wrap .corner-br {
+    position: absolute; bottom: -12px; right: -12px;
+    width: 40px; height: 40px; background: var(--gold); z-index: 0;
+  }
+  .msg-photo {
+    position: relative; z-index: 1;
+    width: 100%; aspect-ratio: 4 / 3;
+    overflow: hidden; border: 3px solid var(--navy);
+    background: var(--navy-deep);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .msg-photo img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .msg-photo .photo-placeholder {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: linear-gradient(155deg, var(--navy-mid) 0%, var(--navy-deep) 100%);
+    width: 100%; height: 100%;
+  }
+  .photo-placeholder .ph-monogram {
+    font-family: var(--font-heading); font-weight: 900;
+    font-size: 56px; line-height: 1; letter-spacing: .06em;
+    color: rgba(194,144,47,.28);
+  }
+  .photo-placeholder .ph-role {
+    font-family: var(--font-accent); font-weight: 700;
+    font-size: 10px; letter-spacing: .26em; text-transform: uppercase;
+    color: rgba(194,144,47,.45); margin-top: 12px;
+  }
+
+  /* 肩書き・名前・テキストエリア */
+  .msg-body {
+    padding: 32px 36px 36px; background: var(--paper);
+    border: 1px solid var(--line); border-top: none;
+  }
+  .msg-role {
+    display: inline-block;
+    font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 10px;
+    letter-spacing: .22em; text-transform: uppercase; padding: 6px 16px;
+    background: var(--navy); color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .msg-name-en {
+    font-family: var(--font-heading); font-weight: 700; font-size: 32px;
+    letter-spacing: .06em; color: var(--navy); line-height: 1; text-transform: uppercase;
+  }
+  .msg-name-ja {
+    font-family: var(--font-body); font-weight: 700; font-size: 20px;
+    color: var(--navy); margin-top: 8px; letter-spacing: .08em;
+  }
+  .msg-rule {
+    width: 48px; height: 3px; background: var(--gold); margin: 18px 0 22px;
+  }
+
+  /* ---- 挨拶本文 ---- */
+  /* ★ 後から本文を差し替える場合はここの <p> タグを編集してください */
+  .msg-text { font-size: 15px; color: #3a4154; line-height: 1.95; }
+  .msg-text p { margin-bottom: 16px; }
+  .msg-text p:last-child { margin-bottom: 0; }
+
+  /* 署名 */
+  .msg-signature {
+    margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line);
+    display: flex; justify-content: flex-end;
+  }
+  .msg-signature .sig-inner { text-align: right; }
+  .msg-signature .sig-role {
+    font-family: "Montserrat", sans-serif; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; font-weight: 600;
+    color: var(--muted); margin-bottom: 5px;
+  }
+  .msg-signature .sig-name {
+    font-family: var(--font-body); font-weight: 700; font-size: 18px;
+    color: var(--navy); letter-spacing: .08em;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 1000px) {
+    .msg-body { padding: 26px 28px 30px; }
+  }
+  @media (max-width: 768px) {
+    .msg-section { padding: 56px 0 72px; }
+    .msg-grid { grid-template-columns: 1fr; gap: 52px; }
+    .msg-body { padding: 24px 22px 28px; }
+    .msg-name-en { font-size: 24px; }
+    .msg-name-ja { font-size: 19px; }
+    .msg-text { font-size: 14.5px; }
+  }
+  @media (max-width: 480px) {
+    .msg-section { padding: 40px 0 56px; }
+    .msg-grid { gap: 40px; }
+    .msg-body { padding: 20px 18px 24px; }
+    .msg-text { font-size: 14px; }
+    .msg-name-en { font-size: 22px; }
+    .msg-name-ja { font-size: 18px; }
+    .msg-photo-wrap .corner-tl { top: -8px; left: -8px; width: 28px; height: 28px; }
+    .msg-photo-wrap .corner-br { bottom: -8px; right: -8px; width: 28px; height: 28px; }
+  }

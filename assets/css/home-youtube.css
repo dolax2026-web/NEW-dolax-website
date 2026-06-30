@@ -1,0 +1,68 @@
+/* ================================================================
+   DOLAX home-youtube.css — OFFICIAL YOUTUBE CHANNEL セクション
+   ▶ index.html の YouTube 動画カードを担当します
+   EDIT: 動画を差し替える場合は index.html の iframe src を更新してください
+================================================================ */
+
+.yt-sec {
+  background: #f8f9fb;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── セクションヘッダー ── */
+.yt-head { text-align: center; margin-bottom: 40px; }
+.yt-head .kicker    { display: inline-block; margin-bottom: 8px; }
+.yt-head .sec-title { color: var(--navy); }
+.yt-head-ja {
+  font-family: var(--font-body); font-size: 13px;
+  color: var(--muted); letter-spacing: .08em; margin-top: 6px;
+}
+.yt-head .sec-divider { margin: 20px auto 0; }
+
+/* ── 動画カード ── */
+.yt-card {
+  max-width: 960px; margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  box-shadow: 0 8px 36px rgba(20,35,63,.08), 0 2px 8px rgba(20,35,63,.04);
+}
+
+/* 16:9 アスペクト比コンテナ */
+.yt-embed-wrap {
+  position: relative; width: 100%; padding-top: 56.25%;
+  background: var(--navy-deep); overflow: hidden;
+}
+.yt-embed-wrap iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; border: none;
+  display: block;
+}
+
+/* ── カード下部（説明文 + CTA） ── */
+.yt-card-body {
+  padding: 28px 36px 34px;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 28px;
+}
+.yt-desc {
+  font-family: var(--font-body);
+  font-size: 14.5px; color: #3a4154; line-height: 1.9;
+  flex: 1;
+}
+.yt-cta { white-space: nowrap; flex-shrink: 0; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .yt-head    { margin-bottom: 28px; }
+  .yt-card-body {
+    flex-direction: column; align-items: flex-start;
+    padding: 22px 22px 26px; gap: 18px;
+  }
+  .yt-cta     { width: 100%; display: block; text-align: center; box-sizing: border-box; }
+}
+@media (max-width: 480px) {
+  .yt-card-body { padding: 18px 18px 22px; gap: 14px; }
+  .yt-desc      { font-size: 14px; }
+}

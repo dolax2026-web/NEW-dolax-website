@@ -1,0 +1,94 @@
+/* ================================================================
+   DOLAX home-game.css — 試合情報（NEXT GAME / LATEST RESULT）
+   ▶ index.html の試合カード2枚を担当します
+   EDIT: 試合情報は index.html の match-sec 内 HTML を直接編集
+================================================================ */
+
+/* ============ MATCH INFO ============ */
+.match-sec { background: #f5f7fb; padding: 40px 0; border-bottom: 1px solid var(--line); }
+.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
+
+/* -- 共通カードシェル -- */
+.mc {
+  position: relative; overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line); border-top: 3px solid var(--gold);
+  padding: 28px 32px 32px;
+  display: flex; flex-direction: column;
+}
+
+/* Label */
+.mc-label {
+  font-family: "Montserrat", sans-serif; font-weight: 700;
+  font-size: 9px; letter-spacing: .26em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.mc-label::before { content: ''; width: 24px; height: 2px; background: var(--gold); flex-shrink: 0; }
+
+/* Meta row */
+.mc-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.mc-date { font-family: var(--font-en); font-weight: 600; font-size: 14px; letter-spacing: .05em; color: var(--muted); }
+.mc-cat {
+  font-family: "Montserrat", sans-serif; font-weight: 700;
+  font-size: 8px; letter-spacing: .18em; text-transform: uppercase; padding: 3px 10px;
+  border: 1px solid rgba(20,35,63,.18); color: var(--navy);
+}
+
+/* Matchup */
+.mc-matchup { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.mc-team { font-family: var(--font-body); font-weight: 700; font-size: 16px; line-height: 1.4; flex: 1; color: var(--navy); text-align: center; }
+.mc-team--home { text-align: right; }
+.mc-team--away { text-align: left; }
+
+/* VS / Score center column */
+.mc-center { flex-shrink: 0; text-align: center; min-width: 72px; }
+.mc-vs-text { font-family: var(--font-number); font-weight: 700; font-size: 14px; letter-spacing: .14em; color: rgba(20,35,63,.18); }
+
+/* Score */
+.mc-score { display: flex; align-items: center; gap: 5px; justify-content: center; }
+.mc-score-num {
+  font-family: var(--font-number); font-weight: 900;
+  font-size: 52px; line-height: 1; letter-spacing: .01em; color: var(--navy);
+}
+.mc-score-sep { font-family: var(--font-number); font-size: 24px; color: var(--line); font-weight: 300; }
+
+/* 補足情報ゾーン */
+.mc-sub {
+  flex: 1;
+  border-top: 1px solid var(--line);
+  padding: 16px 0 22px;
+  display: flex; flex-direction: column; gap: 9px;
+}
+.mc-detail { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
+.mc-detail svg { width: 13px; height: 13px; color: var(--gold); flex-shrink: 0; }
+
+/* WIN/LOSE バッジ */
+.mc-result-badge {
+  font-family: "Montserrat", sans-serif; font-weight: 700;
+  font-size: 8px; letter-spacing: .2em; text-transform: uppercase;
+  padding: 4px 12px; display: inline-block; align-self: flex-start;
+  background: rgba(20,35,63,.06); border: 1px solid rgba(20,35,63,.16); color: var(--muted);
+}
+.mc-result-badge--win  { background: var(--gold); border-color: var(--gold); color: #1d1b10; }
+.mc-result-badge--lose { background: rgba(20,35,63,.06); border-color: rgba(20,35,63,.2); color: var(--muted); }
+.mc-result-badge--draw { background: rgba(20,35,63,.04); border-color: rgba(20,35,63,.14); color: var(--muted); }
+
+/* ボタン */
+.mc-btn { font-size: 10px; padding: 13px 24px; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .match-grid   { grid-template-columns: 1fr; }
+  .mc           { padding: 26px 24px 28px; }
+  .mc-team      { font-size: 14px; }
+  .mc-score-num { font-size: 42px; }
+  .mc-center    { min-width: 56px; }
+}
+@media (max-width: 480px) {
+  .match-sec    { padding: 32px 0; }
+  .mc           { padding: 20px 18px 24px; }
+  .mc-score-num { font-size: 36px; }
+  .mc-center    { min-width: 44px; }
+  .mc-matchup   { gap: 8px; }
+}
